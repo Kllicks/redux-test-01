@@ -3,12 +3,12 @@ import { updateObject } from '../utility';
 
 const intitialState = {
 	results: []
-}
+};
 
 const deleteResult = (state, action) => {
     const updatedArray = state.results.filter(result => result.id !== action.resultElId);
     updateObject(state, { results: updatedArray })
-}
+};
 
 const reducer = (state = intitialState, action) => {
 	switch (action.type) {
@@ -20,8 +20,8 @@ const reducer = (state = intitialState, action) => {
             // newArray.splice(id, 1)
             
         default:
+            return state;
 	}
-	return state;
 };
 
 export default reducer;
